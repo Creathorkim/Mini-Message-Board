@@ -6,7 +6,7 @@
     <title><%= title %></title>
   </head>
   <body class="bg-purple-100 flex justify-center items-center min-h-screen">
-    <div class="w-full max-w-lg h-full px-4">
+    <div class="w-full max-w-lg px-4">
       <h1 class="text-3xl font-bold my-4 text-center"><%= title %></h1>
 
       <form
@@ -20,6 +20,7 @@
             type="text"
             name="messageUser"
             class="w-full border rounded p-2 focus:outline-none focus:ring-2 focus:ring-purple-500 w-full"
+            required
           />
         </div>
         <div>
@@ -27,6 +28,7 @@
           <textarea
             name="messageText"
             class="w-full border rounded py-2 focus:outline-none focus:ring-2 focus:ring-purple-500"
+            required
           ></textarea>
         </div>
         <button
