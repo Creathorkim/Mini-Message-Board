@@ -1,22 +1,40 @@
-# Mini-Message-Board
+# Mini Message Board
 
-A simple, elegant messaging board built with **Node.js**, **Express**, **EJS**, and **Tailwind CSS**. Messages are added dynamically and rendered server-side with a clean, chat-style UI.
+A sleek, full-stack messaging board app built with **Node.js**, **Express**, **EJS**, and **PostgreSQL**. This project demonstrates modern backend architecture using the **pg** module for persistent data storage, with messages rendered dynamically in a clean, chat-style UI.
 
 ## Features
 
-- Add new messages using a simple form
-- Dynamic rendering with EJS
-- Chat-style layout with alternating message alignment
-- Uses Tailwind CSS for styling
-- Organized file structure following MVC principles
-- Environment variable support with dotenv
+- Submit and store messages in a PostgreSQL database
+- Persistent storage via `pg`'s `Client` (for seeding) and `Pool` (for user interactions)
+- Dynamic rendering with EJS templates
+- Real-time feel with chat-style layout and Tailwind CSS
+- MVC-based file structure for scalability and organization
+- Secure configuration using environment variables with `dotenv`
+- Clean seed script to set up the `messages` table and insert initial data
 
 ---
 
 ## Tech Stack
 
-- [Node.js](https://nodejs.org/)
-- [Express](https://expressjs.com/)
-- [EJS](https://ejs.co/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [dotenv](https://www.npmjs.com/package/dotenv)
+- **Node.js** – Backend runtime
+- **Express.js** – Routing and server logic
+- **PostgreSQL** – Relational database for persistent storage
+- **pg** – PostgreSQL client for Node.js, using:
+  - `Client` for one-time DB seeding
+  - `Pool` for app-level database connections
+- **EJS** – Templating engine for server-side rendering
+- **Tailwind CSS** – Utility-first CSS for responsive and modern UI
+- **dotenv** – For managing sensitive config like `DATABASE_URL`
+
+---
+
+## How I Used PostgreSQL
+
+- **Seeding**  
+  Using `pg.Client`, I created the `messages` table and inserted starter data via a standalone script (`db/seed.js`). This ensures the database schema is consistent and can be reset easily.
+
+- **App Queries**  
+  In the live app, I use `pg.Pool` to handle database operations efficiently. This allows multiple users to submit or retrieve messages concurrently without opening new DB connections each time.
+
+- **Live Demo** 
+  https://mini-message-board-vm3f.onrender.com/

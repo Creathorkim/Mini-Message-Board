@@ -11,7 +11,7 @@
       <a href="/new" class="text-blue-600 hover:underline mb-4 block"
         >Add new message</a
       >
-      <div class="space-y-4 lg:mb-5">
+      <div class="space-y-4">
         <% messages.forEach((msg)=>{ %>
         <div
           class="<%= currentUser === msg.user ? 'flex justify-start' : 'flex justify-end' %>"
@@ -19,10 +19,10 @@
           <div class="mb-5">
             <div class="p-4 shadow rounded">
               <p class="text-lg font-semibold"><%= msg.user %></p>
-              <p class="text-gray-700"><%= msg.text %></p>
+              <p class="text-gray-700"><%= msg.message %></p>
             </div>
             <p class="text-sm text-gray-400">
-              <%= msg.added.toLocaleString() %>
+              <%= msg.created_at.toLocaleString() %>
             </p>
           </div>
         </div>
