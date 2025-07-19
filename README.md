@@ -37,4 +37,4 @@ A sleek, full-stack messaging board app built with **Node.js**, **Express**, **E
   In the live app, I use `pg.Pool` to handle database operations efficiently. This allows multiple users to submit or retrieve messages concurrently without opening new DB connections each time.
 
 - **Live Demo** 
-  https://mini-message-board-vm3f.onrender.com/
+  https://mini-message-board-kt5n.onrender.com/
