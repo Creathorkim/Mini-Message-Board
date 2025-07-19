@@ -1,6 +1,6 @@
 #! /usr/bin/env node
-const { Client } = require("pg");
 require("dotenv").config();
+const { Client } = require("pg");
 
 const SQL = `
    DROP TABLE IF EXISTS messages;
@@ -16,9 +16,6 @@ const SQL = `
    ('Charles', 'All good here! Just polishing the final touches on the UI.'),
    ('Creathorkim', 'Looks amazing already.'),
    ('Charles', 'Definitely.');
-
-   DELETE FROM messages WHERE id IN (5,6,7);
-
 `;
 
 async function main() {
